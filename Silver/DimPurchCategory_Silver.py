@@ -10,7 +10,7 @@ schema = 'silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-purchcategoryDF = spark.table('bronze.purchcategory')
+purchcategoryDF = spark.table('oaon_project.bronze.purchcategory')
 
 # COMMAND ----------
 
@@ -25,7 +25,7 @@ dimpurchcategoryDF = purchcategoryDF.filter(purchcategoryDF.RecordId.isNotNull()
         purchcategoryDF.RecordId.alias('PurchCategoryRecordId')
     ).withColumn('UpdateDateTime', F.lit(UpdateDateTime)
     ).withColumn("CurrencyHashKey", F.xxhash64("PurchCategoryRecordId"))
-display(dimpurchcategoryDF)
+# display(dimpurchcategoryDF)
 
 # COMMAND ----------
 

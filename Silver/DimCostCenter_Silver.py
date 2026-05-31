@@ -10,7 +10,7 @@ schema = 'silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-costcenterDF = spark.table('bronze.costcenter')
+costcenterDF = spark.table('oaon_project.bronze.costcenter')
 
 # COMMAND ----------
 
@@ -24,7 +24,7 @@ dimcostcenterDF = costcenterDF.filter(costcenterDF.RecordId.isNotNull()
         costcenterDF.RecordId.alias('CostCenterRecordId')
     ).withColumn('UpdateDateTime', F.lit(UpdateDateTime)
     ).withColumn("CostCenterHashKey", F.xxhash64("CostCenterRecordId"))
-display(dimcostcenterDF)
+# display(dimcostcenterDF)
 
 # COMMAND ----------
 

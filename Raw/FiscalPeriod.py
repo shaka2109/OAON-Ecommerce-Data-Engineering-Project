@@ -13,7 +13,10 @@
 
 EntityName = 'FiscalPeriod'
 Manifest = 'Others'
-deltaLakePath = 'DeltaLake/Raw/Others/' + EntityName
+
+# COMMAND ----------
+
+deltaLakePath = f'delta/raw/{Manifest}/{EntityName}'
 
 # COMMAND ----------
 

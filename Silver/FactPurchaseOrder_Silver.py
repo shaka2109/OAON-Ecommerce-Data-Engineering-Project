@@ -10,9 +10,9 @@ schema = 'Silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-purchaseorderDf= spark.table("bronze.purchaseorder")
-dimcostcenterDf= spark.table("silver.dimcostcenter")
-dimcurrencyDf= spark.table("silver.dimcurrency")
+purchaseorderDf= spark.table("oaon_project.bronze.purchaseorder")
+dimcostcenterDf= spark.table("oaon_project.silver.dimcostcenter")
+dimcurrencyDf= spark.table("oaon_project.silver.dimcurrency")
 
 # COMMAND ----------
 
@@ -49,7 +49,7 @@ factpurchaseorderDf = purchaseorderDf.filter(purchaseorderDf.RecordId.isNotNull(
     ).withColumn("UpdateDateTime", F.lit(UpdateDateTime)
     ).withColumn("PurchaseOrderHashKey", F.xxhash64("PurchaseOrderRecordId")
     )
-display(factpurchaseorderDf)
+# display(factpurchaseorderDf)
 
 # COMMAND ----------
 

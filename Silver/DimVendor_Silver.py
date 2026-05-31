@@ -10,7 +10,7 @@ schema = 'silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-vendorDF = spark.table('bronze.vendtable')
+vendorDF = spark.table('oaon_project.bronze.vendtable')
 
 # COMMAND ----------
 
@@ -35,7 +35,7 @@ dimVendorDf = vendorDF.filter(vendorDF.RecordId.isNotNull()
         F.trim(vendorDF.CurrencyCode).alias('CurrencyCode')
     ).withColumn('UpdateDateTime', F.lit(UpdateDateTime)
     ).withColumn("VendorHashKey", F.xxhash64("VendorRecordId"))
-display(dimVendorDf)
+# display(dimVendorDf)
 
 # COMMAND ----------
 

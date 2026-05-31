@@ -10,7 +10,7 @@ schema = 'bronze'
 # COMMAND ----------
 
 fiscaldf = readFromDeltaPath(model,entity)
-display(fiscaldf)
+# display(fiscaldf)
 
 # COMMAND ----------
 

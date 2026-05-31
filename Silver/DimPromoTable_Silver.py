@@ -10,7 +10,7 @@ schema = 'silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-promotableDF = spark.table('bronze.promotable')
+promotableDF = spark.table('oaon_project.bronze.promotable')
 
 # COMMAND ----------
 
@@ -31,7 +31,7 @@ dimpromotabledf = promotableDF.filter(promotableDF.RecordId.isNotNull()
     ).withColumn("UpdatedDateTime", F.lit(UpdateDateTime)
     ).withColumn("PartyHashKey", F.xxhash64("PromoRecordId")
     )
-display(dimpromotabledf)
+# display(dimpromotabledf)
 
 # COMMAND ----------
 

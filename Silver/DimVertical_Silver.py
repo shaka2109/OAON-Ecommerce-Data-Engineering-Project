@@ -10,7 +10,7 @@ schema = 'silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-workerdf = spark.table('bronze.workertable')
+workerdf = spark.table('oaon_project.bronze.workertable')
 
 # COMMAND ----------
 
@@ -18,7 +18,7 @@ workerdf = spark.table('bronze.workertable')
 # MAGIC %sql
 # MAGIC -- Se crea una nueva tabla usando (BIGINT GENERATED ALWAYS AS IDENTITY)
 # MAGIC
-# MAGIC CREATE TABLE IF NOT EXISTS silver.dimvertical (
+# MAGIC CREATE TABLE IF NOT EXISTS oaon_project.silver.dimvertical (
 # MAGIC   VerticalId BIGINT GENERATED ALWAYS AS IDENTITY,
 # MAGIC   Vertical STRING
 # MAGIC )
@@ -34,7 +34,7 @@ display(df)
 # COMMAND ----------
 
 # DBTITLE 1,Read table
-verticaldf = spark.table("silver.dimvertical")
+verticaldf = spark.table("oaon_project.silver.dimvertical")
 display(verticaldf)
 
 # COMMAND ----------
@@ -48,12 +48,12 @@ display(newrowsdf)
 
 # Inserta los nuevos registros
 
-newrowsdf.write.mode("append").saveAsTable("silver.dimvertical")
+newrowsdf.write.mode("append").saveAsTable("oaon_project.silver.dimvertical")
 
 # COMMAND ----------
 
 # DBTITLE 1,Show table
-display(spark.table("silver.dimvertical"))
+display(spark.table("oaon_project.silver.dimvertical"))
 
 # COMMAND ----------
 

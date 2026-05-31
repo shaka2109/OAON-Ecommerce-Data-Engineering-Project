@@ -13,7 +13,10 @@
 
 EntityName = 'PurchContracts'
 Manifest = 'Purchase'
-deltaLakePath = 'DeltaLake/Raw/Purchase/' + EntityName
+
+# COMMAND ----------
+
+deltaLakePath = f'delta/raw/{Manifest}/{EntityName}'
 
 # COMMAND ----------
 
@@ -22,7 +25,7 @@ deltaLakePath = 'DeltaLake/Raw/Purchase/' + EntityName
 # COMMAND ----------
 
 PurchContractsdf = read_entity(Manifest,EntityName)
-display(PurchContractsdf)
+# display(PurchContractsdf)
 
 # COMMAND ----------
 

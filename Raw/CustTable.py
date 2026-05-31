@@ -13,7 +13,10 @@
 
 EntityName = 'CustTable'
 Manifest = 'Sales'
-deltaLakePath = 'DeltaLake/Raw/Sales/' + EntityName
+
+# COMMAND ----------
+
+deltaLakePath = f'delta/raw/{Manifest}/{EntityName}'
 
 # COMMAND ----------
 

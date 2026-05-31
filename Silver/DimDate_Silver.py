@@ -10,7 +10,7 @@ schema = 'silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-fiscalperiodDF = spark.table('bronze.fiscalperiod')
+fiscalperiodDF = spark.table('oaon_project.bronze.fiscalperiod')
 
 # COMMAND ----------
 

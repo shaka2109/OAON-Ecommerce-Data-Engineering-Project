@@ -11,14 +11,14 @@ schema = 'silver'
 # DBTITLE 1,Read Bronze Tables
 # Se observa la necesidad de normalizar la tabla creando una tabla de dimension con PaymentTypes
 
-salesorderlineDF = spark.table('bronze.salesorderline')
-display(salesorderlineDF)
+salesorderlineDF = spark.table('oaon_project.bronze.salesorderline')
+# display(salesorderlineDF)
 
 # COMMAND ----------
 
 # DBTITLE 1,Create new dim table
 # MAGIC %sql
-# MAGIC CREATE TABLE IF NOT EXISTS silver.dimpaymenttypes(
+# MAGIC CREATE TABLE IF NOT EXISTS oaon_project.silver.dimpaymenttypes(
 # MAGIC   PaymentTypeId INT,
 # MAGIC   PaymentTypeDesc STRING
 # MAGIC )
@@ -38,7 +38,7 @@ display(df)
 # DBTITLE 1,Read new dim table
 # Se lee la tabla creada con su estructura
 
-paymenttypeDF = spark.table("silver.dimpaymenttypes")
+paymenttypeDF = spark.table("oaon_project.silver.dimpaymenttypes")
 display(paymenttypeDF)
 
 # COMMAND ----------
@@ -53,7 +53,7 @@ display(newrowsdf)
 
 # Se obtiene el maximo id de la tabla
 
-maxdf = spark.sql("SELECT IFNULL(MAX(PaymentTypeId),0) AS maxid FROM silver.dimpaymenttypes")
+maxdf = spark.sql("SELECT IFNULL(MAX(PaymentTypeId),0) AS maxid FROM oaon_project.silver.dimpaymenttypes")
 maxid = maxdf.first()[0]
 print(maxid)
 
@@ -79,7 +79,7 @@ display(idsFinal)
 
 # DBTITLE 1,Chequear relleno
 # MAGIC %sql
-# MAGIC select  * from silver.dimpaymenttypes
+# MAGIC select  * from oaon_project.silver.dimpaymenttypes
 # MAGIC
 # MAGIC -- Se lee la tabla antes del incremental
 
@@ -101,7 +101,7 @@ appendToDeltaTable(df_final,"silver",entity)
 
 # DBTITLE 1,Read new table
 # MAGIC %sql
-# MAGIC select  * from silver.dimpaymenttypes
+# MAGIC select  * from oaon_project.silver.dimpaymenttypes
 
 # COMMAND ----------
 

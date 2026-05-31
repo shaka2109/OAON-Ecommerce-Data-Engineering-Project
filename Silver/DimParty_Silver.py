@@ -10,8 +10,8 @@ schema = 'Silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-partiesDF = spark.table('bronze.parties')
-partyaddressDF = spark.table('bronze.partyaddress')
+partiesDF = spark.table('oaon_project.bronze.parties')
+partyaddressDF = spark.table('oaon_project.bronze.partyaddress')
 
 # COMMAND ----------
 
@@ -40,7 +40,7 @@ dimPartyDf = partiesDF.join(
              partyaddressDF.RecordId.alias('PartyAddressRecordID'),   
     ).withColumn('UpdateDateTime', F.lit(UpdateDateTime)
     ).withColumn("PartyHashKey", F.xxhash64("PartyRecordId"))
-display(dimPartyDf)
+# display(dimPartyDf)
 
 # COMMAND ----------
 

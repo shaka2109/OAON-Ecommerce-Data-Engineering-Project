@@ -12,13 +12,13 @@ schema = 'Silver'
 # DBTITLE 1,Read Bronze Tables
 # Se lee la tabla de la base de datos a usar como fact
 
-salesorderlinedf= spark.table("bronze.salesorderline")
+salesorderlinedf= spark.table("oaon_project.bronze.salesorderline")
 
 # COMMAND ----------
 
 # DBTITLE 1,Read table SQL
 # MAGIC %sql
-# MAGIC select * from bronze.promotable
+# MAGIC select * from oaon_project.bronze.promotable
 # MAGIC
 # MAGIC -- Entendemos que se deben crear nuevas columnas con condiones de las promociones para unir con la tabla que servira como FACT
 
@@ -50,7 +50,7 @@ salesorderlinedf= spark.table("bronze.salesorderline")
 # MAGIC   ValidFrom,
 # MAGIC   ValidTo,
 # MAGIC   PromoPercentage
-# MAGIC FROM bronze.promotable
+# MAGIC FROM oaon_project.bronze.promotable
 # MAGIC
 
 # COMMAND ----------
@@ -107,9 +107,9 @@ salesorderlinedf= spark.table("bronze.salesorderline")
 # MAGIC   PR.PromotionId,
 # MAGIC   current_timestamp() AS UpdatedDateTime,
 # MAGIC   xxhash64(s.RecordId) AS SalesOrderLineRecordId
-# MAGIC  FROM bronze.salesorderline AS S
-# MAGIC  LEFT JOIN bronze.currency AS C ON S.CurrencyCode = C.Code
-# MAGIC  LEFT JOIN silver.dimpaymenttypes AS P  ON S.PaymentTypeDesc = P.PaymentTypeDesc
+# MAGIC  FROM oaon_project.bronze.salesorderline AS S
+# MAGIC  LEFT JOIN oaon_project.bronze.currency AS C ON S.CurrencyCode = C.Code
+# MAGIC  LEFT JOIN oaon_project.silver.dimpaymenttypes AS P  ON S.PaymentTypeDesc = P.PaymentTypeDesc
 # MAGIC  LEFT JOIN vwPromotable AS PR
 # MAGIC    ON (
 # MAGIC       MONTH(S.BookDate) = 1

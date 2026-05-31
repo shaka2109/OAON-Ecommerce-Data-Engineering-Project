@@ -10,7 +10,7 @@ schema = 'bronze'
 # COMMAND ----------
 
 workertabledf = readFromDeltaPath(model,entity)
-display(workertabledf)
+# display(workertabledf)
 
 # COMMAND ----------
 

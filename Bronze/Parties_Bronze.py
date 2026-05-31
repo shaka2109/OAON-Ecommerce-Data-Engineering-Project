@@ -10,7 +10,7 @@ schema = 'bronze'
 # COMMAND ----------
 
 partiesdf = readFromDeltaPath(model,entity)
-display(partiesdf)
+# display(partiesdf)
 
 # COMMAND ----------
 

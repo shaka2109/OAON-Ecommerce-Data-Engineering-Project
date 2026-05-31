@@ -10,8 +10,8 @@ schema = 'silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-workertableDF = spark.table('bronze.workertable')
-verticalDF = spark.table('silver.dimvertical')
+workertableDF = spark.table('oaon_project.bronze.workertable')
+verticalDF = spark.table('oaon_project.silver.dimvertical')
 
 # COMMAND ----------
 
@@ -37,7 +37,7 @@ dimworkertabledf = workertableDF.filter(workertableDF.RecordId.isNotNull()
     ).withColumn("UpdatedDateTime", F.lit(UpdatedDateTime)
     ).withColumn("WorkerHashKey", F.xxhash64("WorkerTableRecordId")
     )
-display(dimworkertabledf)
+# display(dimworkertabledf)
 
 # COMMAND ----------
 

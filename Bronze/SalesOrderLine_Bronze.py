@@ -10,7 +10,7 @@ schema = 'bronze'
 # COMMAND ----------
 
 SalesOrderLinedf = readFromDeltaPath(model,entity)
-display(SalesOrderLinedf)
+# display(SalesOrderLinedf)
 
 # COMMAND ----------
 

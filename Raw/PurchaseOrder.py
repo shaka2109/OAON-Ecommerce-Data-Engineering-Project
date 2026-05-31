@@ -13,7 +13,10 @@
 
 EntityName = 'PurchaseOrder'
 Manifest = 'Purchase'
-deltaLakePath = 'DeltaLake/Raw/Purchase/' + EntityName
+
+# COMMAND ----------
+
+deltaLakePath = f'delta/raw/{Manifest}/{EntityName}'
 
 # COMMAND ----------
 

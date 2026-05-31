@@ -10,7 +10,7 @@ schema = 'silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-currencyDF = spark.table('bronze.currency')
+currencyDF = spark.table('oaon_project.bronze.currency')
 
 # COMMAND ----------
 
@@ -26,7 +26,7 @@ dimcurrencyDF = currencyDF.filter(currencyDF.RecordId.isNotNull()
         currencyDF.RecordId.alias('CurrencyRecordId')
     ).withColumn('UpdateDateTime', F.lit(UpdateDateTime)
     ).withColumn("CurrencyHashKey", F.xxhash64("CurrencyRecordId"))
-display(dimcurrencyDF)
+# display(dimcurrencyDF)
 
 # COMMAND ----------
 

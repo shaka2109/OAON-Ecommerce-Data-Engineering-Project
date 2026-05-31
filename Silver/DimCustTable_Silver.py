@@ -10,7 +10,7 @@ schema = 'silver'
 # COMMAND ----------
 
 # DBTITLE 1,Read Bronze Tables
-custtableDF = spark.table('bronze.custtable')
+custtableDF = spark.table('oaon_project.bronze.custtable')
 
 # COMMAND ----------
 
@@ -34,7 +34,7 @@ dimcusttabledf = custtableDF.filter(custtableDF.RecordId.isNotNull()
     ).withColumn("UpdateDateTime", F.lit(UpdateDateTime)
     ).withColumn("PartyHashKey", F.xxhash64("CustTableRecordId")
     )
-display(dimcusttabledf)
+# display(dimcusttabledf)
 
 # COMMAND ----------
 
