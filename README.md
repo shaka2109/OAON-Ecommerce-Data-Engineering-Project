@@ -37,10 +37,10 @@ Applies data standardization, schema enforcement, datetime ingestion, datetime m
 ## Workflow Orchestration
 
 OAON Full Pipeline
-<img src="images/Orchestration.png" width="400">
+<img src="images/Orchestration.png" width="1000">
 
 ## Data Model
-<img src="images/DataModel.png" width="400">
+<img src="images/DataModel.png" width="500">
 
 ## CI/CD and DevOps
 
