@@ -36,8 +36,23 @@ Applies data standardization, schema enforcement, datetime ingestion, datetime m
 
 ## Workflow Orchestration
 
-OAON Full Pipeline
-<img src="images/Orchestration.png" width="1000">
+[DEV] OAON Raw Load
+
+<img src="images/DataModel.png" width="500">
+
+[DEV] OAON Bronze Load
+
+<img src="images/DataModel.png" width="500">
+
+[DEV] OAON Silver Load
+
+<img src="images/DataModel.png" width="500">
+
+[DEV] OAON Full Pipeline
+
+<img src="images/DataModel.png" width="500">
+
+
 
 ## Data Model
 <img src="images/DataModel.png" width="500">
