@@ -2,7 +2,7 @@
 Order Anything Online (OAON) is an end-to-end Data Engineering project that demonstrates the design and implementation of a modern Lakehouse architecture on Azure. The solution processes enterprise data from Microsoft Dynamics 365 across Purchasing, Sales, Human Resources, and Customer Support domains, applying Medallion Architecture principles to transform raw operational data into analytics-ready datasets. The project showcases practical experience with Azure Databricks, Delta Lake, Git-based development workflows, Databricks Asset Bundles, and data pipeline orchestration, following industry-standard Data Engineering practices.
 
 ## Solution Architecture
-<img src="images/Proceso.png" width="400">
+<img src="images/Proceso.png" width="175">
 
 ## Project Objectives
 - Implement a Medallion Architecture using Databricks and Delta Lake.
@@ -37,10 +37,10 @@ Applies data standardization, schema enforcement, datetime ingestion, datetime m
 ## Workflow Orchestration
 
 OAON Full Pipeline
-![Workflow](images/Orchestration.png)
+<img src="images/Orchestration.png" width="400">
 
 ## Data Model
-<img src="images/DataModel.png" width="200">
+<img src="images/DataModel.png" width="400">
 
 ## CI/CD and DevOps
 
