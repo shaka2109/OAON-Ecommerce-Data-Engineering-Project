@@ -25,7 +25,7 @@ deltaLakePath = f'delta/raw/{Manifest}/{EntityName}'
 # COMMAND ----------
 
 partyAddressdf = read_entity(Manifest,EntityName)
-display(partyAddressdf)
+# display(partyAddressdf)
 
 # COMMAND ----------
 

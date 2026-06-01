@@ -25,7 +25,7 @@ deltaLakePath = f'delta/raw/{Manifest}/{EntityName}'
 # COMMAND ----------
 
 PurchaseOrderdf = read_entity(Manifest,EntityName)
-display(PurchaseOrderdf)
+# display(PurchaseOrderdf)
 
 # COMMAND ----------
 

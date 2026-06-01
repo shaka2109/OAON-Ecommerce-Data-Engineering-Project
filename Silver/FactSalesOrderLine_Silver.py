@@ -124,7 +124,7 @@ salesorderlinedf= spark.table("oaon_project.bronze.salesorderline")
 
 # DBTITLE 1,Read Fact Table
 factsalesorderlinedf =  spark.table("vwFactSalesOrderLine")
-display(factsalesorderlinedf)
+# display(factsalesorderlinedf)
 
 # COMMAND ----------
 

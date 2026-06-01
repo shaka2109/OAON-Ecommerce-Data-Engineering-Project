@@ -1,10 +1,11 @@
-# %%
+# Databricks notebook source
 import pyspark.sql.functions as F 
 import datetime as dt
 import pandas as pd
 import dateutil
 
-# %%
+# COMMAND ----------
+
 # service_credential = dbutils.secrets.get(scope="proyecto02scope",key="ClientSecret")
 # application_id = dbutils.secrets.get(scope="proyecto02scope",key="appid")
 # tenant_id = dbutils.secrets.get(scope="proyecto02scope",key="tenantid")
@@ -18,12 +19,14 @@ import dateutil
 # spark.conf.set("fs.azure.account.oauth2.client.endpoint.adlsproyecto01.dfs.core.windows.net",
 #                f"https://login.microsoftonline.com/{tenant_id}/oauth2/token")
 
-# %%
+# COMMAND ----------
+
 devBasePath = "/Volumes/oaon_project/"
 deltaRawPath = "delta/raw/"
 catalog = 'oaon_project'
 
-# %%
+# COMMAND ----------
+
 from pyspark.sql.types import *
 
 type_map = {
@@ -57,7 +60,8 @@ def read_cdm_entity(cdm_path, csv_path, header=False, delimiter=","):
             .option("delimiter", delimiter)
             .csv(csv_path))
 
-# %%
+# COMMAND ----------
+
 def read_manifest(manifest_path, base_folder):
     manifest = (spark.read
                 .option("multiline","true")
@@ -77,7 +81,8 @@ def read_manifest(manifest_path, base_folder):
 
     return dfs
 
-# %%
+# COMMAND ----------
+
 def read_entity(model, entity):
 
     base = "/Volumes/oaon_project/files/tablas"
@@ -91,20 +96,23 @@ def read_entity(model, entity):
     
     return df
 
-# %%
+# COMMAND ----------
+
 def writeRawToDeltaLake(entityDF,deltaLakePath):
     (entityDF.write.mode('overwrite')
                     .option('overwriteSchema',True)
                     .option('path', devBasePath+deltaLakePath).save())
 
-# %%
+# COMMAND ----------
+
 def readFromDeltaPath(model,entity):
    df = (spark.read.format('delta')
     .option('path', f'{devBasePath}{deltaRawPath}{model}/{entity}/')
     .load())
    return df
 
-# %%
+# COMMAND ----------
+
 def saveDeltaTableToCatalog(df,schema,tableName):
     schema = schema.lower()
     tableName = tableName.lower()
@@ -113,7 +121,8 @@ def saveDeltaTableToCatalog(df,schema,tableName):
             .mode("overwrite")
             .saveAsTable(f"{catalog}.{schema}.{tableName}"))
 
-# %%
+# COMMAND ----------
+
 def appendToDeltaTable(df,schema,tableName):
     schema = schema.lower()
     tableName = tableName.lower()
@@ -121,5 +130,3 @@ def appendToDeltaTable(df,schema,tableName):
             .mode("append")
             .option("mergeSchema","True")
             .saveAsTable(f"{catalog}.{schema}.{tableName}"))
-
-

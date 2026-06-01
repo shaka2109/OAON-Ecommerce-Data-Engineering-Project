@@ -32,7 +32,7 @@ print(end_date)
 # DBTITLE 1,Series with dates
 datepddf = pd.date_range(start_date,end_date, freq='D').to_frame(name='Date')
 datedf=spark.createDataFrame(datepddf)
-display(datedf)
+# display(datedf)
 
 # COMMAND ----------
 
@@ -44,7 +44,7 @@ joindf = (
         & (datedf.Date <= fiscalperiodDF.FiscalEndDate),
         "left",
     ))
-display(joindf)
+# display(joindf)
 
 # COMMAND ----------
 
@@ -71,7 +71,7 @@ datedimdf = joindf.select(
     F.lit(UpdateDateTime).alias("UpdatedDateTime"),
     F.xxhash64("DateId").alias("DateKey")
 )
-display(datedimdf)
+# display(datedimdf)
 
 # COMMAND ----------
 
