@@ -40,8 +40,7 @@ OAON Full Pipeline
 ![Workflow](images/Orchestration.png)
 
 ## Data Model
-
-![Data Model](images/DataModel.png)
+<img src="images/DataModel.png" width="200">
 
 ## CI/CD and DevOps
 
