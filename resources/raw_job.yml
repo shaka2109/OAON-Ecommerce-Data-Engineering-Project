@@ -18,9 +18,9 @@ resources:
           notebook_task:
             notebook_path: ../notebooks/Raw/CustTable.py
 
-        - task_key: Fiscalperiod
+        - task_key: FiscalPeriod
           notebook_task:
-            notebook_path: ../notebooks/Raw/Fiscalperiod.py
+            notebook_path: ../notebooks/Raw/FiscalPeriod.py
 
         - task_key: Parties
           notebook_task:

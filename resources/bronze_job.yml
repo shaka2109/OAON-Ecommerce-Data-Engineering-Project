@@ -28,7 +28,7 @@ resources:
 
         - task_key: PartyAddress_bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/PartyAddress_bronze.py
+            notebook_path: ../notebooks/Bronze/PartyAddress_Bronze.py
 
         - task_key: PromoTable_Bronze
           notebook_task:
@@ -40,7 +40,7 @@ resources:
 
         - task_key: PurchCategory_bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/PurchCategory_bronze.py
+            notebook_path: ../notebooks/Bronze/PurchCategory_Bronze.py
 
         - task_key: PurchContracts_Bronze
           notebook_task:
