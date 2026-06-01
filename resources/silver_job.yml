@@ -1,4 +1,3 @@
-# Databricks notebook source
 resources:
   jobs:
     oaon_silver_load:
@@ -10,62 +9,62 @@ resources:
         - task_key: DimCostCenter_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimCostCenter_Silver
+            notebook_path: ../notebooks/Silver/DimCostCenter_Silver.py
 
         - task_key: DimCurrency_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimCurrency_Silver
+            notebook_path: ../notebooks/Silver/DimCurrency_Silver.py
 
         - task_key: DimCustTable_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimCustTable_Silver
+            notebook_path: ../notebooks/Silver/DimCustTable_Silver.py
 
         - task_key: DimDate_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimDate_Silver
+            notebook_path: ../notebooks/Silver/DimDate_Silver.py
 
         - task_key: DimParty_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimParty_Silver
+            notebook_path: ../notebooks/Silver/DimParty_Silver.py
 
         - task_key: DimPaymentTypes_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimPaymentTypes_Silver
+            notebook_path: ../notebooks/Silver/DimPaymentTypes_Silver.py
 
         - task_key: DimPromoTable_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimPromoTable_Silver
+            notebook_path: ../notebooks/Silver/DimPromoTable_Silver.py
 
         - task_key: DimPurchCategory_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimPurchCategory_Silver
+            notebook_path: ../notebooks/Silver/DimPurchCategory_Silver.py
 
         - task_key: DimPurchItem_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimPurchItem_Silver
+            notebook_path: ../notebooks/Silver/DimPurchItem_Silver.py
 
         - task_key: DimVendor_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimVendor_Silver
+            notebook_path: ../notebooks/Silver/DimVendor_Silver.py
 
         - task_key: DimVertical_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimVertical_Silver
+            notebook_path: ../notebooks/Silver/DimVertical_Silver.py
 
         - task_key: DimWorkerTable_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/DimWorkerTable_Silver
+            notebook_path: ../notebooks/Silver/DimWorkerTable_Silver.py
 
         - task_key: FactPurchaseOrder_Silver
 
@@ -74,9 +73,9 @@ resources:
             - task_key: DimCurrency_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/FactPurchaseOrder_Silver
+            notebook_path: ../notebooks/Silver/FactPurchaseOrder_Silver.py
 
         - task_key: FactSalesOrderLine_Silver
 
           notebook_task:
-            notebook_path: ../notebooks/Silver/FactSalesOrderLine_Silver
+            notebook_path: ../notebooks/Silver/FactSalesOrderLine_Silver.py

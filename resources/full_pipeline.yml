@@ -1,4 +1,3 @@
-# Databricks notebook source
 resources:
   jobs:
     oaon_full_pipeline:
@@ -10,7 +9,7 @@ resources:
         - task_key: raw_load
 
           run_job_task:
-            job_name: OAON Raw Load
+            job_id: ${resources.jobs.oaon_raw_load.id}
 
         - task_key: bronze_load
 
@@ -18,7 +17,7 @@ resources:
             - task_key: raw_load
 
           run_job_task:
-            job_name: OAON Bronze Load
+            job_id: ${resources.jobs.oaon_bronze_load.id}
 
         - task_key: silver_load
 
@@ -26,4 +25,4 @@ resources:
             - task_key: bronze_load
 
           run_job_task:
-            job_name: OAON Silver Load
+            job_id: ${resources.jobs.oaon_silver_load.id}

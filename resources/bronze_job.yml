@@ -1,4 +1,3 @@
-# Databricks notebook source
 resources:
   jobs:
     oaon_bronze_load:
@@ -9,56 +8,56 @@ resources:
 
         - task_key: CostCenter_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/CostCenter_Bronze
+            notebook_path: ../notebooks/Bronze/CostCenter_Bronze.py
 
         - task_key: Currency_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/Currency_Bronze
+            notebook_path: ../notebooks/Bronze/Currency_Bronze.py
 
         - task_key: CustTable_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/CustTable_Bronze
+            notebook_path: ../notebooks/Bronze/CustTable_Bronze.py
 
         - task_key: FiscalPeriod_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/FiscalPeriod_Bronze
+            notebook_path: ../notebooks/Bronze/FiscalPeriod_Bronze.py
 
         - task_key: Parties_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/Parties_Bronze
+            notebook_path: ../notebooks/Bronze/Parties_Bronze.py
 
         - task_key: PartyAddress_bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/PartyAddress_bronze
+            notebook_path: ../notebooks/Bronze/PartyAddress_bronze.py
 
         - task_key: PromoTable_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/PromoTable_Bronze
+            notebook_path: ../notebooks/Bronze/PromoTable_Bronze.py
 
         - task_key: PurchaseOrder_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/PurchaseOrder_Bronze
+            notebook_path: ../notebooks/Bronze/PurchaseOrder_Bronze.py
 
         - task_key: PurchCategory_bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/PurchCategory_bronze
+            notebook_path: ../notebooks/Bronze/PurchCategory_bronze.py
 
         - task_key: PurchContracts_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/PurchContracts_Bronze
+            notebook_path: ../notebooks/Bronze/PurchContracts_Bronze.py
 
         - task_key: PurchItem_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/PurchItem_Bronze
+            notebook_path: ../notebooks/Bronze/PurchItem_Bronze.py
 
         - task_key: SalesOrderLine_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/SalesOrderLine_Bronze
+            notebook_path: ../notebooks/Bronze/SalesOrderLine_Bronze.py
 
         - task_key: VendTable_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/VendTable_Bronze
+            notebook_path: ../notebooks/Bronze/VendTable_Bronze.py
 
         - task_key: WorkerTable_Bronze
           notebook_task:
-            notebook_path: ../notebooks/Bronze/WorkerTable_Bronze
+            notebook_path: ../notebooks/Bronze/WorkerTable_Bronze.py

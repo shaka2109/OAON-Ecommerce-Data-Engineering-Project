@@ -1,4 +1,3 @@
-# Databricks notebook source
 bundle:
   name: oaon-ecommerce
 
@@ -9,4 +8,4 @@ targets:
   dev:
     default: true
     workspace:
-      host: https://adb-xxxxxxxxxxxxxxxx.x.azuredatabricks.net
+      host: https://dbc-a1dee497-4a72.cloud.databricks.com
