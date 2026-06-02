@@ -36,21 +36,16 @@ Applies data standardization, schema enforcement, datetime ingestion, datetime m
 
 ## Workflow Orchestration
 
-[DEV] OAON Raw Load
+<img src="images/FullJob.png" width="700">
 
-<img src="images/RawJob.png" width="800">
+<img src="images/RawJob.png" width="700">
 
-[DEV] OAON Bronze Load
+<img src="images/BronzeJob.png" width="700">
 
-<img src="images/BronzeJob.png" width="800">
+<img src="images/SilverJob.png" width="700">
 
-[DEV] OAON Silver Load
 
-<img src="images/SilverJob.png" width="800">
 
-[DEV] OAON Full Pipeline
-
-<img src="images/FullJob.png" width="800">
 
 
 
