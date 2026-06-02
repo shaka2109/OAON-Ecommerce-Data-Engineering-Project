@@ -38,19 +38,19 @@ Applies data standardization, schema enforcement, datetime ingestion, datetime m
 
 [DEV] OAON Raw Load
 
-<img src="images/DataModel.png" width="500">
+<img src="images/RawJob.png" width="500">
 
 [DEV] OAON Bronze Load
 
-<img src="images/DataModel.png" width="500">
+<img src="images/BronzeJob.png" width="500">
 
 [DEV] OAON Silver Load
 
-<img src="images/DataModel.png" width="500">
+<img src="images/SilverJob.png" width="500">
 
 [DEV] OAON Full Pipeline
 
-<img src="images/DataModel.png" width="500">
+<img src="images/FullJob.png" width="500">
 
 
 
